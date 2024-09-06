@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<PreserveCompilationContext>true</PreserveCompilationContext>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="EmailTemplates\EmailTemplate.html" />
+	  <None Remove="EmailTemplates\EmailTemplateAdd.html" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="EmailTemplates\EmailTemplate.html" />
+	  <EmbeddedResource Include="EmailTemplates\EmailTemplateAdd.html" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+		<PackageReference Include="Firebase.Auth" Version="1.0.0" />
+		<PackageReference Include="FirebaseStorage.net" Version="1.0.3" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.32" />
+		<PackageReference Include="Scriban" Version="5.6.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\GestorBarberia.Persistence\GestorBarberia.Persistence.csproj" />
+	</ItemGroup>
+
+</Project>

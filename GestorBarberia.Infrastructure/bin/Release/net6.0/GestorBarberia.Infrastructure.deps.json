@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "GestorBarberia.Infrastructure/1.0.0": {
+        "dependencies": {
+          "GestorBarberia.Domain": "1.0.0"
+        },
+        "runtime": {
+          "GestorBarberia.Infrastructure.dll": {}
+        }
+      },
+      "GestorBarberia.Domain/1.0.0": {
+        "runtime": {
+          "GestorBarberia.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GestorBarberia.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GestorBarberia.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
