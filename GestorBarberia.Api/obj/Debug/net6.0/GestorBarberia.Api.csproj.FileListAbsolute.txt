@@ -69,6 +69,7 @@ D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Api\bin\Debug\net6.0\N
 D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Api\bin\Debug\net6.0\NuGet.Protocol.dll
 D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Api\bin\Debug\net6.0\NuGet.Versioning.dll
 D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Api\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Api\bin\Debug\net6.0\Scriban.dll
 D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Api\bin\Debug\net6.0\SQLitePCLRaw.batteries_v2.dll
 D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Api\bin\Debug\net6.0\SQLitePCLRaw.core.dll
 D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Api\bin\Debug\net6.0\SQLitePCLRaw.provider.e_sqlite3.dll
@@ -294,4 +295,3 @@ D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Api\obj\Debug\net6.0\r
 D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Api\obj\Debug\net6.0\GestorBarberia.Api.pdb
 D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Api\obj\Debug\net6.0\GestorBarberia.Api.genruntimeconfig.cache
 D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Api\obj\Debug\net6.0\ref\GestorBarberia.Api.dll
-D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Api\bin\Debug\net6.0\Scriban.dll
