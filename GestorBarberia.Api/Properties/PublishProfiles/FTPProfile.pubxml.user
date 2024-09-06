@@ -15,10 +15,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/29/2022 11:04:06</publishTime>
     </File>
     <File Include="appsettings.Development.json">
-      <publishTime>08/27/2024 21:56:16</publishTime>
+      <publishTime>09/06/2024 17:01:03</publishTime>
     </File>
     <File Include="appsettings.json">
-      <publishTime>08/27/2024 21:56:18</publishTime>
+      <publishTime>09/06/2024 17:00:44</publishTime>
     </File>
     <File Include="ar/Humanizer.resources.dll">
       <publishTime>01/29/2022 11:04:06</publishTime>
@@ -156,49 +156,49 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/14/2021 14:38:18</publishTime>
     </File>
     <File Include="GestorBarberia.Api.deps.json">
-      <publishTime>08/27/2024 21:57:43</publishTime>
+      <publishTime>09/06/2024 17:02:12</publishTime>
     </File>
     <File Include="GestorBarberia.Api.dll">
-      <publishTime>08/27/2024 21:57:31</publishTime>
+      <publishTime>09/06/2024 17:02:07</publishTime>
     </File>
     <File Include="GestorBarberia.Api.exe">
-      <publishTime>08/27/2024 21:57:31</publishTime>
+      <publishTime>09/06/2024 17:02:07</publishTime>
     </File>
     <File Include="GestorBarberia.Api.pdb">
-      <publishTime>08/27/2024 21:57:31</publishTime>
+      <publishTime>09/06/2024 17:02:07</publishTime>
     </File>
     <File Include="GestorBarberia.Api.runtimeconfig.json">
-      <publishTime>08/21/2024 14:36:08</publishTime>
+      <publishTime>09/06/2024 17:02:08</publishTime>
     </File>
     <File Include="GestorBarberia.Application.dll">
-      <publishTime>08/27/2024 21:57:17</publishTime>
+      <publishTime>09/06/2024 17:02:06</publishTime>
     </File>
     <File Include="GestorBarberia.Application.pdb">
-      <publishTime>08/27/2024 21:57:17</publishTime>
+      <publishTime>09/06/2024 17:02:06</publishTime>
     </File>
     <File Include="GestorBarberia.Domain.dll">
-      <publishTime>08/21/2024 14:35:59</publishTime>
+      <publishTime>09/06/2024 17:02:04</publishTime>
     </File>
     <File Include="GestorBarberia.Domain.pdb">
-      <publishTime>08/21/2024 14:35:59</publishTime>
+      <publishTime>09/06/2024 17:02:04</publishTime>
     </File>
     <File Include="GestorBarberia.Infrastructure.dll">
-      <publishTime>08/21/2024 14:36:00</publishTime>
+      <publishTime>09/06/2024 17:02:05</publishTime>
     </File>
     <File Include="GestorBarberia.Infrastructure.pdb">
-      <publishTime>08/21/2024 14:36:00</publishTime>
+      <publishTime>09/06/2024 17:02:05</publishTime>
     </File>
     <File Include="GestorBarberia.loc.dll">
-      <publishTime>08/27/2024 21:57:26</publishTime>
+      <publishTime>09/06/2024 17:02:07</publishTime>
     </File>
     <File Include="GestorBarberia.loc.pdb">
-      <publishTime>08/27/2024 21:57:26</publishTime>
+      <publishTime>09/06/2024 17:02:07</publishTime>
     </File>
     <File Include="GestorBarberia.Persistence.dll">
-      <publishTime>08/21/2024 14:36:01</publishTime>
+      <publishTime>09/06/2024 17:02:05</publishTime>
     </File>
     <File Include="GestorBarberia.Persistence.pdb">
-      <publishTime>08/21/2024 14:36:01</publishTime>
+      <publishTime>09/06/2024 17:02:05</publishTime>
     </File>
     <File Include="he/Humanizer.resources.dll">
       <publishTime>01/29/2022 11:04:08</publishTime>
@@ -662,6 +662,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll">
       <publishTime>11/15/2019 04:53:44</publishTime>
     </File>
+    <File Include="Scriban.dll">
+      <publishTime>02/03/2023 03:25:20</publishTime>
+    </File>
     <File Include="sk/Humanizer.resources.dll">
       <publishTime>01/29/2022 11:04:06</publishTime>
     </File>
@@ -780,7 +783,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/29/2022 11:04:12</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>08/27/2024 21:57:44</publishTime>
+      <publishTime>09/06/2024 17:02:12</publishTime>
     </File>
     <File Include="zh-CN/Humanizer.resources.dll">
       <publishTime>01/29/2022 11:04:12</publishTime>
