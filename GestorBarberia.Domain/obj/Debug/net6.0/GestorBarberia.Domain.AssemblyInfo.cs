@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GestorBarberia.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eac3852c6d0ca9eb30fd901f9130a98ed1ee356c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c80021d1ed5f32915695718d174ebd2a1c4536ef")]
 [assembly: System.Reflection.AssemblyProductAttribute("GestorBarberia.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GestorBarberia.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

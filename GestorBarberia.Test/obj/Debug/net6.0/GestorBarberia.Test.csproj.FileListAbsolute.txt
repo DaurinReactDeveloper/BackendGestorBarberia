@@ -86,6 +86,7 @@ D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Test\bin\Debug\net6.0\
 D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Test\bin\Debug\net6.0\NuGet.Protocol.dll
 D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Test\bin\Debug\net6.0\NuGet.Versioning.dll
 D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Test\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Test\bin\Debug\net6.0\Scriban.dll
 D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Test\bin\Debug\net6.0\SQLitePCLRaw.batteries_v2.dll
 D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Test\bin\Debug\net6.0\SQLitePCLRaw.core.dll
 D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Test\bin\Debug\net6.0\SQLitePCLRaw.provider.e_sqlite3.dll
@@ -372,4 +373,3 @@ D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Test\obj\Debug\net6.0\
 D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Test\obj\Debug\net6.0\GestorBarberia.Test.pdb
 D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Test\obj\Debug\net6.0\GestorBarberia.Test.genruntimeconfig.cache
 D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Test\obj\Debug\net6.0\ref\GestorBarberia.Test.dll
-D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Test\bin\Debug\net6.0\Scriban.dll
