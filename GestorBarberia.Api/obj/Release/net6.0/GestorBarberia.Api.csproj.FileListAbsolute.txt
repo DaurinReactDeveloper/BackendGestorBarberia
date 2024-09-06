@@ -294,3 +294,4 @@ D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Api\obj\Release\net6.0
 D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Api\obj\Release\net6.0\GestorBarberia.Api.pdb
 D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Api\obj\Release\net6.0\GestorBarberia.Api.genruntimeconfig.cache
 D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Api\obj\Release\net6.0\ref\GestorBarberia.Api.dll
+D:\Proyectos\GestorBarberia\GestorBarberia\GestorBarberia.Api\bin\Release\net6.0\Scriban.dll

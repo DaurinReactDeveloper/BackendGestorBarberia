@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GestorBarberia.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c88b6008cba00c8139f36844332156bbedbfd60b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eac3852c6d0ca9eb30fd901f9130a98ed1ee356c")]
 [assembly: System.Reflection.AssemblyProductAttribute("GestorBarberia.Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GestorBarberia.Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
