@@ -10,8 +10,9 @@ using System.Threading.Tasks;
 
 namespace GestorBarberia.Persistence.Interface
 {
-    public interface IBarberoRepository : IBaseRepository<Barbero>
+    public interface IBarberoRepository : IBaseRepository<Barberos>
     {
+
         List<BarberoModel> GetBarberos();
 
         //Login Barbero

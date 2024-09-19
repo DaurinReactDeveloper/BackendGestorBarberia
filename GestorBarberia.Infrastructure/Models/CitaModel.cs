@@ -14,9 +14,10 @@ namespace GestorBarberia.Infrastructure.Models
         public int EstiloId { get; set; }
         public string Estado { get; set; } = null!;
 
-        public virtual Barbero? Barbero { get; set; }
-        public virtual Cliente? Cliente { get; set; }
-        public virtual Estilosdecorte? Estilo { get; set; }
+        public virtual Barberos? Barbero { get; set; }
+        public virtual Clientes? Cliente { get; set; }
+        public virtual Estilosdecortes? Estilo { get; set; }
+
 
     }
 }

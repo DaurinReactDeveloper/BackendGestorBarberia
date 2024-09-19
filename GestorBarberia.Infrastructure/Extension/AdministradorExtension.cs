@@ -11,13 +11,13 @@ namespace GestorBarberia.Infrastructure.Extension
     public static class AdministradorExtension
     {
 
-        public static AdministradorModel ConvertAdministradorToModel(this Administrador administradorEntity)
+        public static AdministradorModel ConvertAdministradorToModel(this Administradores administradorEntity)
         {
 
           var administradorModel = new AdministradorModel()
             {
 
-                AdministradorID = administradorEntity.AdministradorID,
+                AdministradoresId = administradorEntity.AdministradoresId,
                 Email = administradorEntity.Email,
                 Nombre = administradorEntity.Nombre,
                 Password = administradorEntity.Password,

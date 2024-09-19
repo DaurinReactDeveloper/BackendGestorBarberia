@@ -11,6 +11,7 @@ namespace GestorBarberia.Application.Contract
 {
     public interface ICitaServices : IBaseServices<CitaAddDto, CitaRemoveDto, CitaUpdateDto>
     {
+        ServiceResult GetCitaById(int citaId);
         ServiceResult GetCitaByBarberoId(int barberoId);
         ServiceResult GetCitaByClienteId(int clienteId);
         ServiceResult UpdateEstado(CitaUpdateDto updateEstado);

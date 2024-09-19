@@ -34,14 +34,14 @@ namespace GestorBarberia.Test.Capa_de_Persistencia
         {
             // Arrange
             var nombre = "Cliente1";
-            var cliente = new Cliente { ClienteId = 1, Nombre = nombre, Password = "password" };
-            var clientes = new List<Cliente> { cliente }.AsQueryable();
+            var cliente = new Clientes { ClienteId = 1, Nombre = nombre, Password = "password" };
+            var clientes = new List<Clientes> { cliente }.AsQueryable();
 
-            var mockSet = new Mock<DbSet<Cliente>>();
-            mockSet.As<IQueryable<Cliente>>().Setup(m => m.Provider).Returns(clientes.Provider);
-            mockSet.As<IQueryable<Cliente>>().Setup(m => m.Expression).Returns(clientes.Expression);
-            mockSet.As<IQueryable<Cliente>>().Setup(m => m.ElementType).Returns(clientes.ElementType);
-            mockSet.As<IQueryable<Cliente>>().Setup(m => m.GetEnumerator()).Returns(clientes.GetEnumerator());
+            var mockSet = new Mock<DbSet<Clientes>>();
+            mockSet.As<IQueryable<Clientes>>().Setup(m => m.Provider).Returns(clientes.Provider);
+            mockSet.As<IQueryable<Clientes>>().Setup(m => m.Expression).Returns(clientes.Expression);
+            mockSet.As<IQueryable<Clientes>>().Setup(m => m.ElementType).Returns(clientes.ElementType);
+            mockSet.As<IQueryable<Clientes>>().Setup(m => m.GetEnumerator()).Returns(clientes.GetEnumerator());
 
             _mockDbContext.Setup(c => c.Clientes).Returns(mockSet.Object);
 
@@ -58,13 +58,13 @@ namespace GestorBarberia.Test.Capa_de_Persistencia
         {
             // Arrange
             var nombre = "ClienteNoExistente";
-            var clientes = new List<Cliente>().AsQueryable();
+            var clientes = new List<Clientes>().AsQueryable();
 
-            var mockSet = new Mock<DbSet<Cliente>>();
-            mockSet.As<IQueryable<Cliente>>().Setup(m => m.Provider).Returns(clientes.Provider);
-            mockSet.As<IQueryable<Cliente>>().Setup(m => m.Expression).Returns(clientes.Expression);
-            mockSet.As<IQueryable<Cliente>>().Setup(m => m.ElementType).Returns(clientes.ElementType);
-            mockSet.As<IQueryable<Cliente>>().Setup(m => m.GetEnumerator()).Returns(clientes.GetEnumerator());
+            var mockSet = new Mock<DbSet<Clientes>>();
+            mockSet.As<IQueryable<Clientes>>().Setup(m => m.Provider).Returns(clientes.Provider);
+            mockSet.As<IQueryable<Clientes>>().Setup(m => m.Expression).Returns(clientes.Expression);
+            mockSet.As<IQueryable<Clientes>>().Setup(m => m.ElementType).Returns(clientes.ElementType);
+            mockSet.As<IQueryable<Clientes>>().Setup(m => m.GetEnumerator()).Returns(clientes.GetEnumerator());
 
             _mockDbContext.Setup(c => c.Clientes).Returns(mockSet.Object);
 
@@ -81,14 +81,14 @@ namespace GestorBarberia.Test.Capa_de_Persistencia
             // Arrange
             var nombre = "Cliente1";
             var password = "password";
-            var cliente = new Cliente { ClienteId = 1, Nombre = nombre, Password = password };
-            var clientes = new List<Cliente> { cliente }.AsQueryable();
+            var cliente = new Clientes { ClienteId = 1, Nombre = nombre, Password = password };
+            var clientes = new List<Clientes> { cliente }.AsQueryable();
 
-            var mockSet = new Mock<DbSet<Cliente>>();
-            mockSet.As<IQueryable<Cliente>>().Setup(m => m.Provider).Returns(clientes.Provider);
-            mockSet.As<IQueryable<Cliente>>().Setup(m => m.Expression).Returns(clientes.Expression);
-            mockSet.As<IQueryable<Cliente>>().Setup(m => m.ElementType).Returns(clientes.ElementType);
-            mockSet.As<IQueryable<Cliente>>().Setup(m => m.GetEnumerator()).Returns(clientes.GetEnumerator());
+            var mockSet = new Mock<DbSet<Clientes>>();
+            mockSet.As<IQueryable<Clientes>>().Setup(m => m.Provider).Returns(clientes.Provider);
+            mockSet.As<IQueryable<Clientes>>().Setup(m => m.Expression).Returns(clientes.Expression);
+            mockSet.As<IQueryable<Clientes>>().Setup(m => m.ElementType).Returns(clientes.ElementType);
+            mockSet.As<IQueryable<Clientes>>().Setup(m => m.GetEnumerator()).Returns(clientes.GetEnumerator());
 
             _mockDbContext.Setup(c => c.Clientes).Returns(mockSet.Object);
 
@@ -107,20 +107,20 @@ namespace GestorBarberia.Test.Capa_de_Persistencia
             // Arrange
             var nombre = "Cliente1";
             var password = "wrongpassword";
-            var clientes = new List<Cliente>().AsQueryable();
+            var clientes = new List<Clientes>().AsQueryable();
 
-            var mockSet = new Mock<DbSet<Cliente>>();
-            mockSet.As<IQueryable<Cliente>>().Setup(m => m.Provider).Returns(clientes.Provider);
-            mockSet.As<IQueryable<Cliente>>().Setup(m => m.Expression).Returns(clientes.Expression);
-            mockSet.As<IQueryable<Cliente>>().Setup(m => m.ElementType).Returns(clientes.ElementType);
-            mockSet.As<IQueryable<Cliente>>().Setup(m => m.GetEnumerator()).Returns(clientes.GetEnumerator());
+            var mockSet = new Mock<DbSet<Clientes>>();
+            mockSet.As<IQueryable<Clientes>>().Setup(m => m.Provider).Returns(clientes.Provider);
+            mockSet.As<IQueryable<Clientes>>().Setup(m => m.Expression).Returns(clientes.Expression);
+            mockSet.As<IQueryable<Clientes>>().Setup(m => m.ElementType).Returns(clientes.ElementType);
+            mockSet.As<IQueryable<Clientes>>().Setup(m => m.GetEnumerator()).Returns(clientes.GetEnumerator());
 
             _mockDbContext.Setup(c => c.Clientes).Returns(mockSet.Object);
 
             // Act
             var result = _repository.GetCliente(nombre, password);
 
-            // Assert
+            // Assert}
             Assert.Null(result);
         }
 
@@ -129,14 +129,14 @@ namespace GestorBarberia.Test.Capa_de_Persistencia
         {
             // Arrange
             var nombre = "Cliente1";
-            var cliente = new Cliente { ClienteId = 1, Nombre = nombre };
-            var clientes = new List<Cliente> { cliente }.AsQueryable();
+            var cliente = new Clientes { ClienteId = 1, Nombre = nombre };
+            var clientes = new List<Clientes> { cliente }.AsQueryable();
 
-            var mockSet = new Mock<DbSet<Cliente>>();
-            mockSet.As<IQueryable<Cliente>>().Setup(m => m.Provider).Returns(clientes.Provider);
-            mockSet.As<IQueryable<Cliente>>().Setup(m => m.Expression).Returns(clientes.Expression);
-            mockSet.As<IQueryable<Cliente>>().Setup(m => m.ElementType).Returns(clientes.ElementType);
-            mockSet.As<IQueryable<Cliente>>().Setup(m => m.GetEnumerator()).Returns(clientes.GetEnumerator());
+            var mockSet = new Mock<DbSet<Clientes>>();
+            mockSet.As<IQueryable<Clientes>>().Setup(m => m.Provider).Returns(clientes.Provider);
+            mockSet.As<IQueryable<Clientes>>().Setup(m => m.Expression).Returns(clientes.Expression);
+            mockSet.As<IQueryable<Clientes>>().Setup(m => m.ElementType).Returns(clientes.ElementType);
+            mockSet.As<IQueryable<Clientes>>().Setup(m => m.GetEnumerator()).Returns(clientes.GetEnumerator());
 
             _mockDbContext.Setup(c => c.Clientes).Returns(mockSet.Object);
 
@@ -152,13 +152,13 @@ namespace GestorBarberia.Test.Capa_de_Persistencia
         {
             // Arrange
             var nombre = "ClienteNoExistente";
-            var clientes = new List<Cliente>().AsQueryable();
+            var clientes = new List<Clientes>().AsQueryable();
 
-            var mockSet = new Mock<DbSet<Cliente>>();
-            mockSet.As<IQueryable<Cliente>>().Setup(m => m.Provider).Returns(clientes.Provider);
-            mockSet.As<IQueryable<Cliente>>().Setup(m => m.Expression).Returns(clientes.Expression);
-            mockSet.As<IQueryable<Cliente>>().Setup(m => m.ElementType).Returns(clientes.ElementType);
-            mockSet.As<IQueryable<Cliente>>().Setup(m => m.GetEnumerator()).Returns(clientes.GetEnumerator());
+            var mockSet = new Mock<DbSet<Clientes>>();
+            mockSet.As<IQueryable<Clientes>>().Setup(m => m.Provider).Returns(clientes.Provider);
+            mockSet.As<IQueryable<Clientes>>().Setup(m => m.Expression).Returns(clientes.Expression);
+            mockSet.As<IQueryable<Clientes>>().Setup(m => m.ElementType).Returns(clientes.ElementType);
+            mockSet.As<IQueryable<Clientes>>().Setup(m => m.GetEnumerator()).Returns(clientes.GetEnumerator());
 
             _mockDbContext.Setup(c => c.Clientes).Returns(mockSet.Object);
 

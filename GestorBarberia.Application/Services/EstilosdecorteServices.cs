@@ -33,15 +33,15 @@ namespace GestorBarberia.Application.Services
             {
                 var estilosdecortes = this.estilosRepository.GetEstilosdecorte();
                 result.Data = estilosdecortes;
-                result.Message = "Estilos de Corte Obtenidos Correctamente";
+                result.Message = "Estilos de Corte Obtenidos Correctamente.";
 
             }
             catch (Exception ex)
             {
 
                 result.Success = false;
-                result.Message = "Ha ocurrido un error obteniendo los estilos de corte";
-                this.logger.LogError($"Ha ocurrido un error obteniendo los estilos de corte: {ex.Message}");
+                result.Message = "Ha ocurrido un error obteniendo los estilos de corte.";
+                this.logger.LogError($"Ha ocurrido un error obteniendo los estilos de corte: {ex.Message}.");
 
             }
 
@@ -61,20 +61,20 @@ namespace GestorBarberia.Application.Services
                 {
 
                     result.Success = false;
-                    result.Message = "No se pudo obtener el id del estilo de corte";
+                    result.Message = "No se pudo obtener el id del estilo de corte.";
                     return result;
 
                 }
 
                 result.Data = estiloid;
-                result.Message = "Se ha obtenido correctamente el estilo de corte";
+                result.Message = "Se ha obtenido correctamente el estilo de corte.";
 
             }
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Ha ocurrido un error obteniendo el estilo de corte";
-                this.logger.LogError($"Ha Ocurrido un error obteniendo el estilo de corte: {ex.Message}");
+                result.Message = "Ha ocurrido un error obteniendo el estilo de corte.";
+                this.logger.LogError($"Ha Ocurrido un error obteniendo el estilo de corte: {ex.Message}.");
             }
 
             return result;
@@ -91,12 +91,12 @@ namespace GestorBarberia.Application.Services
                 if (EstilosdecorteValidations.ValidationsEstilosdecorte(modelDto))
                 {
                     result.Success = false;
-                    result.Message = "Los campos para agregar un estilo de corte NO cumplen con las validaciones establecidas";
+                    result.Message = "Los campos para agregar un estilo de corte NO cumplen con las validaciones establecidas.";
                     return result;
 
                 }
 
-                this.estilosRepository.Add(new Estilosdecorte()
+                this.estilosRepository.Add(new Estilosdecortes()
                 {
                     EstiloId = modelDto.EstiloId,
                     Descripcion = modelDto.Descripcion,
@@ -107,14 +107,14 @@ namespace GestorBarberia.Application.Services
                 });
 
                 this.estilosRepository.SaveChanged();
-                result.Message = "Estilo de Corte Guardado Correctamente";
+                result.Message = "Estilo de Corte Guardado Correctamente.";
             }
 
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Ha ocurrido un error guardando el estilo de corte";
-                this.logger.LogError($"Ha ocurrido un error guardando el estilo de corte: {ex.Message}");
+                result.Message = "Ha ocurrido un error guardando el estilo de corte.";
+                this.logger.LogError($"Ha ocurrido un error guardando el estilo de corte: {ex.Message}.");
             }
 
             return result;
@@ -132,7 +132,7 @@ namespace GestorBarberia.Application.Services
                 if (EstilosdecorteValidations.ValidationsEstilosdecorte(modelDto))
                 {
                     result.Success = false;
-                    result.Message = "Los campos para actualizar un estilo de corte NO cumplen con las validaciones establecidas";
+                    result.Message = "Los campos para actualizar un estilo de corte NO cumplen con las validaciones establecidas.";
                     return result;
 
                 }
@@ -145,13 +145,13 @@ namespace GestorBarberia.Application.Services
 
                 this.estilosRepository.Update(estiloUpdate);
                 this.estilosRepository.SaveChanged();
-                result.Message = "Estilo de Corte Actualizado Correctamente"; 
+                result.Message = "Estilo de Corte Actualizado Correctamente."; 
             }
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Ha ocurrido un error actualizando el estilo de corte";
-                this.logger.LogError($"Ha ocurrido un error actualizando el estilo de corte: {ex.Message}");
+                result.Message = "Ha ocurrido un error actualizando el estilo de corte.";
+                this.logger.LogError($"Ha ocurrido un error actualizando el estilo de corte: {ex.Message}.");
             }
 
             return result;
@@ -171,13 +171,13 @@ namespace GestorBarberia.Application.Services
                 {
 
                     result.Success = false;
-                    result.Message = "Ha ocurrido un error obteniendo el id del estilo de corte";
+                    result.Message = "Ha ocurrido un error obteniendo el id del estilo de corte.";
                     return result;
                 }
 
                 this.estilosRepository.Remove(estiloRemove);
                 this.estilosRepository.SaveChanged();
-                result.Message = "Estilo de Corte Removido Correctamente";
+                result.Message = "Estilo de Corte Removido Correctamente.";
 
 
 
@@ -186,7 +186,7 @@ namespace GestorBarberia.Application.Services
             {
                 result.Success = false;
                 result.Message = "Ha ocurrido un error eliminando el estilo de corte";
-                this.logger.LogError($"Ha ocurrido un error eliminando el estilo de corte: {ex.Message}");
+                this.logger.LogError($"Ha ocurrido un error eliminando el estilo de corte: {ex.Message}.");
             }
 
             return result;

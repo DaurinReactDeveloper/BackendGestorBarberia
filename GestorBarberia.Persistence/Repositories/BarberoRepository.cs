@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace GestorBarberia.Persistence.Repositories
 {
-    public class BarberoRepository : BaseRepository<Barbero>, IBarberoRepository
+    public class BarberoRepository : BaseRepository<Barberos>, IBarberoRepository
     {
         private readonly DbContextBarberia dbContextBarberia;
         private readonly ILogger<BarberoRepository> logger;
@@ -42,8 +42,8 @@ namespace GestorBarberia.Persistence.Repositories
             }
             catch (Exception ex)
             {
-                this.logger.LogError($"Ha ocurrido un error obteniendo el barbero: {ex.Message}");
-                throw new BarberoExceptions("Ha ocurrido un error obteniendo el barbero");
+                this.logger.LogError($"Ha ocurrido un error obteniendo el barbero: {ex.ToString()}.");
+                throw new BarberoExceptions("Ha ocurrido un error obteniendo el barbero.");
             }
         }
 
@@ -53,7 +53,7 @@ namespace GestorBarberia.Persistence.Repositories
             try
             {
 
-                var model = (from ba in this.dbContextBarberia.Barberos
+                 var barberoModel = (from ba in this.dbContextBarberia.Barberos
                              where ba.Nombre.Equals(name) && ba.Password.Equals(password)
                              select new BarberoModel()
                              {
@@ -63,15 +63,16 @@ namespace GestorBarberia.Persistence.Repositories
 
                              }).FirstOrDefault();
 
-                return model;
+                return barberoModel;
 
             }
 
             catch (Exception ex)
             {
-                this.logger.LogError($"Ha ocurrido un error obteniendo el barbero: {ex.Message}");
-                throw new BarberoExceptions("Ha ocurrido un error obteniendo el barbero");
+                this.logger.LogError($"Ha ocurrido un error obteniendo el barbero: {ex.ToString()}.");
+                throw new BarberoExceptions("Ha ocurrido un error obteniendo el barbero.");
             }
+
         }
 
         public List<BarberoModel> GetBarberos()
@@ -83,12 +84,13 @@ namespace GestorBarberia.Persistence.Repositories
             {
 
                 barberoModels = base.GetEntities()
-                                .Select(Cl => Cl.ConverteBarberoToModel())
+                                .Select(br => br.ConverteBarberoToModel())
                                 .ToList();
             }
             catch (Exception ex)
             {
-                this.logger.LogError($"Ha ocurrido un error obteniendo los barberos : {ex.ToString()}");
+                this.logger.LogError($"Ha ocurrido un error obteniendo los barberos : {ex.ToString()}.");
+                throw new BarberoExceptions("Ha ocurrido un error obteniendo los barbero.");
             }
 
             return barberoModels;
@@ -99,7 +101,6 @@ namespace GestorBarberia.Persistence.Repositories
         {
             try
             {
-                // Verificar si ya existe un barbero con el nombre proporcionado
                 var nameData = (from n in this.dbContextBarberia.Barberos
                                 where n.Nombre.Equals(nameBarbero)
                                 select n).FirstOrDefault();
@@ -108,28 +109,28 @@ namespace GestorBarberia.Persistence.Repositories
             }
             catch (Exception ex)
             {
-                this.logger.LogError($"Ha ocurrido un error verificando el nombre del barbero: {ex.Message}");
-                throw new BarberoExceptions("Ha ocurrido un error verificando el nombre del barbero");
+                this.logger.LogError($"Ha ocurrido un error verificando el nombre del barbero: {ex.ToString()}.");
+                throw new BarberoExceptions("Ha ocurrido un error verificando el nombre del barbero.");
             }
         }
 
-        public override void Add(Barbero entity)
+        public override void Add(Barberos entity)
         {
             base.Add(entity);
             base.SaveChanged();
         }
 
-        public override void Update(Barbero entity)
+        public override void Update(Barberos entity)
         {
 
             try
             {
 
-                Barbero barberoUpdate = base.GetById(entity.BarberoId);
+                Barberos barberoUpdate = base.GetById(entity.BarberoId);
 
                 if (barberoUpdate is null)
                 {
-                    throw new BarberoExceptions("Ha ocurrido un error obteniendo el Id del Barbero");
+                    throw new BarberoExceptions("Ha ocurrido un error obteniendo el Id del Barbero.");
                 }
 
                 barberoUpdate.Nombre = entity.Nombre;
@@ -144,23 +145,23 @@ namespace GestorBarberia.Persistence.Repositories
             }
             catch (Exception ex)
             {
-                this.logger.LogError($"Ha ocurrido un error actualizando el barbero: {ex.ToString()} ");
+                this.logger.LogError($"Ha ocurrido un error actualizando el barbero: {ex.ToString()}.");
             }
 
         }
 
-        public override void Remove(Barbero entity)
+        public override void Remove(Barberos entity)
         {
 
             try
             {
 
-                Barbero barberoRemove = this.GetById(entity.BarberoId);
+                Barberos barberoRemove = this.GetById(entity.BarberoId);
 
                 if (barberoRemove is null)
                 {
 
-                    throw new BarberoExceptions("Ha ocurrido un error obteniendo el Id del Barbero");
+                    throw new BarberoExceptions("Ha ocurrido un error obteniendo el Id del Barbero.");
                 }
 
                 base.Remove(barberoRemove);
@@ -171,7 +172,7 @@ namespace GestorBarberia.Persistence.Repositories
             catch (Exception ex)
             {
 
-                this.logger.LogError($"Ha ocurrido un error elimiando el barbero: {ex.ToString()}");
+                this.logger.LogError($"Ha ocurrido un error elimiando el barbero: {ex.ToString()}.");
 
             }
         }

@@ -10,7 +10,7 @@ namespace GestorBarberia.Infrastructure.Extension
 {
     public static class ClienteExtension
     {
-        public static ClienteModel ConvertClienteToModel(this Cliente ClienteEntity) 
+        public static ClienteModel ConvertClienteToModel(this Clientes ClienteEntity) 
         {
 
             var clienteModel = new ClienteModel()

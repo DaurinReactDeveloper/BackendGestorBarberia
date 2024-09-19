@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace GestorBarberia.Persistence.Interface
 {
-    public interface IEstilosdecorteRepository : IBaseRepository<Estilosdecorte>
+    public interface IEstilosdecorteRepository : IBaseRepository<Estilosdecortes>
     {
 
         List<EstilosdecorteModel> GetEstilosdecorte();

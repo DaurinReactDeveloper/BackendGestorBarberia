@@ -41,7 +41,7 @@ namespace GestorBarberia.Application.Services
                 if (getAdministradorName is null)
                 {
                     result.Success = false;
-                    result.Message = "Nombre del Administrador Incorrecto";
+                    result.Message = "Nombre del Administrador Incorrecto.";
                     return result;
                 }
 
@@ -51,19 +51,19 @@ namespace GestorBarberia.Application.Services
                 if (!isPasswordValid)
                 {
                     result.Success = false;
-                    result.Message = "Contraseña incorrecta";
+                    result.Message = "Contraseña incorrecta.";
                     return result;
                 }
 
                 result.Data = getAdministradorName;
-                result.Message= "Se ha encontrado correctamente el administrador";
+                result.Message= "Se ha encontrado correctamente el administrador.";
 
             }
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Ha ocurrido un error obteniendo el administrador";
-                this.logger.LogError($"Ha ocurrido un error obteniendo el administrador: {ex.Message}");
+                result.Message = "Ha ocurrido un error obteniendo el administrador.";
+                this.logger.LogError($"Ha ocurrido un error obteniendo el administrador: {ex.Message}.");
             }
 
             return result;

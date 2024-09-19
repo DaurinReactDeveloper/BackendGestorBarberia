@@ -93,7 +93,7 @@ public class EmailService : IEmailServices
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error al renderizar la plantilla: {ex.Message}");
+            Console.WriteLine($"Error al renderizar la plantilla: {ex.Message}.");
             return string.Empty;
         }
     }
@@ -110,7 +110,7 @@ public class EmailService : IEmailServices
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error al enviar el correo: {ex.Message}");
+            Console.WriteLine($"Error al enviar el correo: {ex.Message}.");
         }
     }
   

@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace GestorBarberia.Persistence.Repositories
 {
-    public class AdministradorRepository : BaseRepository<Administrador>, IAdministradorRepository
+    public class AdministradorRepository : BaseRepository<Administradores>, IAdministradorRepository
     {
 
         private readonly DbContextBarberia dbContextBarberia;
@@ -34,7 +34,7 @@ namespace GestorBarberia.Persistence.Repositories
 
             try
             {
-                var model = (from ad in this.dbContextBarberia.administradores
+                var AdmModel = (from ad in this.dbContextBarberia.Administradores
                              where ad.Nombre == name && ad.Password == password
                              select new AdministradorModel()
                              {
@@ -43,14 +43,14 @@ namespace GestorBarberia.Persistence.Repositories
 
                              }).FirstOrDefault();
 
-                return model;
+                return AdmModel;
 
             }
 
             catch (Exception ex)
             {
-                this.logger.LogError($"Ha ocurrido un error obteniendo el barbero: {ex.Message}");
-                throw new AdministradorExceptions("Ha ocurrido un error obteniendo el Administrador");
+                this.logger.LogError($"Ha ocurrido un error obteniendo el barbero: {ex.ToString()}.");
+                throw new AdministradorExceptions("Ha ocurrido un error obteniendo el Administrador.");
             }
         }
 
@@ -58,7 +58,7 @@ namespace GestorBarberia.Persistence.Repositories
         {
             try
             {
-                var model = (from ad in this.dbContextBarberia.administradores
+                var model = (from ad in this.dbContextBarberia.Administradores
                              where ad.Nombre.Equals(name)
                              select new AdministradorModel()
                              {
@@ -70,8 +70,8 @@ namespace GestorBarberia.Persistence.Repositories
             }
             catch (Exception ex)
             {
-                this.logger.LogError($"Ha ocurrido un error obteniendo el administrador: {ex.Message}");
-                throw new BarberoExceptions("Ha ocurrido un error obteniendo el administrador");
+                this.logger.LogError($"Ha ocurrido un error obteniendo el administrador: {ex.ToString()}.");
+                throw new BarberoExceptions("Ha ocurrido un error obteniendo el administrador.");
             }
         }
     }

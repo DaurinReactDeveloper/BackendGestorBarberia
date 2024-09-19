@@ -64,7 +64,7 @@ namespace GestorBarberia.Api.Controllers
         }
 
         // GET api/<ClienteController>/5
-        [Authorize(Roles = "barbero")]
+        [Authorize(Roles = "barbero,cliente,admin")]
         [HttpGet("ClienteById/{id}")]
         public IActionResult ClienteById(int id)
         {

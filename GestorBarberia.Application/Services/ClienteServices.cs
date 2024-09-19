@@ -39,7 +39,7 @@ namespace GestorBarberia.Application.Services
                 {
 
                     result.Success = false;
-                    result.Message = "Nombre de Usuario Incorrecto";
+                    result.Message = "Nombre de Usuario Incorrecto.";
                     return result;
 
                 }
@@ -49,19 +49,19 @@ namespace GestorBarberia.Application.Services
                 if (!isPasswordValid)
                 {
                     result.Success = false;
-                    result.Message = "Contraseña incorrecta";
+                    result.Message = "Contraseña incorrecta.";
                     return result;
                 }
 
                 result.Data = getCliente;
-                result.Message = "Se ha encontrado correctamente el cliente";
+                result.Message = "Se ha encontrado correctamente el cliente.";
 
             }
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Ha ocurrido un error obteniendo el cliente";
-                this.logger.LogError($"Ha ocurrido un error obteniendo el cliente: {ex.Message}");
+                result.Message = "Ha ocurrido un error obteniendo el cliente.";
+                this.logger.LogError($"Ha ocurrido un error obteniendo el cliente: {ex.Message}.");
             }
 
             return result;
@@ -78,14 +78,14 @@ namespace GestorBarberia.Application.Services
 
                 var clientes = this.clienteRepository.GetClientes();
                 result.Data = clientes;
-                result.Message = "Clientes Obtenidos Correctamente";
+                result.Message = "Clientes Obtenidos Correctamente.";
 
             }
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Ha ocurrido un error obteniendo los clientes";
-                this.logger.LogError($"Ha ocurrido un error obteniendo los clientes: {ex.Message}");
+                result.Message = "Ha ocurrido un error obteniendo los clientes.";
+                this.logger.LogError($"Ha ocurrido un error obteniendo los clientes: {ex.Message}.");
             }
 
             return result;
@@ -104,20 +104,20 @@ namespace GestorBarberia.Application.Services
                 if (clienteid is null)
                 {
                     result.Success = false;
-                    result.Message = "Ha ocurrido un error obteniendo el id del cliente";
+                    result.Message = "El Cliente no existe.";
                     return result;
                 }
 
                 result.Data = clienteid;
-                result.Message = "Cliente Obtenido Correctamente";
+                result.Message = "Cliente Obtenido Correctamente.";
 
             }
 
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Ha ocurrido un error obteniendo el cliente";
-                this.logger.LogError($"Ha ocurrido un error obteniendo el cliente: {ex.Message}");
+                result.Message = "Ha ocurrido un error obteniendo el cliente.";
+                this.logger.LogError($"Ha ocurrido un error obteniendo el cliente: {ex.Message}.");
             }
 
             return result;
@@ -133,14 +133,14 @@ namespace GestorBarberia.Application.Services
             if (!ClienteValidations.ValidationsCliente(modelDto))
             {
                 result.Success = false;
-                result.Message = "Los campos para agregar una cita NO cumplen con las validaciones establecidas";
+                result.Message = "Los campos para agregar una cita NO cumplen con las validaciones establecidas.";
                 return result;
             }
 
             if (this.clienteRepository.VerifyNameCliente(modelDto.Nombre))
             {
                 result.Success = false;
-                result.Message = "Ya existe un cliente con ese nombre";
+                result.Message = "Ya existe un cliente con ese nombre.";
                 return result;
             }
 
@@ -149,7 +149,7 @@ namespace GestorBarberia.Application.Services
             try
             {
 
-                this.clienteRepository.Add(new Cliente()
+                this.clienteRepository.Add(new Clientes()
                 {
                     ClienteId = modelDto.ClienteId,
                     Email = modelDto.Email,
@@ -166,8 +166,8 @@ namespace GestorBarberia.Application.Services
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Ha ocurrido un error guardando el cliente";
-                this.logger.LogError($"Ha ocurrido un error guardando el cliente: {ex.Message}");
+                result.Message = "Ha ocurrido un error guardando el cliente.";
+                this.logger.LogError($"Ha ocurrido un error guardando el cliente: {ex.Message}.");
             }
 
             return result;
@@ -186,7 +186,7 @@ namespace GestorBarberia.Application.Services
                 if (!ClienteValidations.ValidationsCliente(modelDto))
                 {
                     result.Success = false;
-                    result.Message = "Los campos para actualizar un cliente NO cumplen con las validaciones establecidas";
+                    result.Message = "Los campos para actualizar un cliente NO cumplen con las validaciones establecidas.";
                     return result;
                 }
 
@@ -199,15 +199,15 @@ namespace GestorBarberia.Application.Services
 
                 this.clienteRepository.Update(clienteUpdate);
                 this.clienteRepository.SaveChanged();
-                result.Message = "Cliente Actualizado Correctamente";
+                result.Message = "Cliente Actualizado Correctamente.";
 
             }
 
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Ha ocurrido un error actualizando el cliente";
-                this.logger.LogError($"Ha ocurrido un error actualizando el cliente: {ex.Message}");
+                result.Message = "Ha ocurrido un error actualizando el cliente.";
+                this.logger.LogError($"Ha ocurrido un error actualizando el cliente: {ex.Message}.");
             }
 
             return result;
@@ -225,20 +225,20 @@ namespace GestorBarberia.Application.Services
                 if (clienteid is null)
                 {
                     result.Success = false;
-                    result.Message = "Ha ocurrido un error obteniendo el id del cliente";
+                    result.Message = "Ha ocurrido un error obteniendo el id del cliente.";
                     return result;
                 }
 
                 this.clienteRepository.Remove(clienteid);
                 this.clienteRepository.SaveChanged();
-                result.Message = "Cliente Removido Correctamente";
+                result.Message = "Cliente Removido Correctamente.";
 
             }
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Ha ocurrido un error eliminando el cliente";
-                this.logger.LogError($"Ha ocurrido un error eliminando el cliente: {ex.Message}");
+                result.Message = "Ha ocurrido un error eliminando el cliente.";
+                this.logger.LogError($"Ha ocurrido un error eliminando el cliente: {ex.Message}.");
             }
 
             return result;

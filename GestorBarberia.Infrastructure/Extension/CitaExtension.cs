@@ -10,7 +10,7 @@ namespace GestorBarberia.Infrastructure.Extension
 {
     public static class CitaExtension
     {
-        public static CitaModel ConvertCitaToModel(this Cita CitaEntity)
+        public static CitaModel ConvertCitaToModel(this Citas CitaEntity)
         {
             var citaModel = new CitaModel()
             {

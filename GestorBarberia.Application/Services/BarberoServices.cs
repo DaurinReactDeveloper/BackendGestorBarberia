@@ -36,7 +36,7 @@ namespace GestorBarberia.Application.Services
                 if (getBarbero is null)
                 {
                     result.Success = false;
-                    result.Message = "Nombre de Barbero Incorrecto";
+                    result.Message = "Nombre de Barbero Incorrecto.";
                     return result;
                 }
 
@@ -45,7 +45,7 @@ namespace GestorBarberia.Application.Services
                 if (!isPasswordValid)
                 {
                     result.Success = false;
-                    result.Message = "Contraseña incorrecta";
+                    result.Message = "Contraseña incorrecta.";
                     return result;
                 }
 
@@ -55,8 +55,8 @@ namespace GestorBarberia.Application.Services
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Ha ocurrido un error obteniendo el barbero";
-                this.logger.LogError($"Ha ocurrido un error obteniendo el barbero: {ex.Message}");
+                result.Message = "Ha ocurrido un error obteniendo el barbero.";
+                this.logger.LogError($"Ha ocurrido un error obteniendo el barbero: {ex.Message}.");
             }
 
             return result;
@@ -70,13 +70,13 @@ namespace GestorBarberia.Application.Services
             {
                 var barberos = this.BarberoRepository.GetBarberos();
                 result.Data = barberos;
-                result.Message = "Barberos Obtenidos Correctamente";
+                result.Message = "Barberos Obtenidos Correctamente.";
             }
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Error obteniendo los barberos";
-                this.logger.LogError($"Ha ocurrido un EError obteniendo los barberos: {ex.Message}");
+                result.Message = "Error obteniendo los barberos.";
+                this.logger.LogError($"Ha ocurrido un EError obteniendo los barberos: {ex.Message}.");
             }
 
             return result;
@@ -96,21 +96,21 @@ namespace GestorBarberia.Application.Services
                 {
 
                     result.Success = false;
-                    result.Message = "No se pudo obtener el id del barbero";
+                    result.Message = "No se pudo obtener el id del barbero.";
                     return result;
 
                 }
 
                 result.Data = BarberoId;
-                result.Message = "Barbero Obtenido Correctamente";
+                result.Message = "Barbero Obtenido Correctamente.";
             }
 
             catch (Exception ex)
             {
 
                 result.Success = false;
-                result.Message = "Ha ocurrido un error actualizando el barbero";
-                this.logger.LogError($"Ha ocurrido un error actualizando el barbero: {ex.Message}");
+                result.Message = "Ha ocurrido un error actualizando el barbero.";
+                this.logger.LogError($"Ha ocurrido un error actualizando el barbero: {ex.Message}.");
 
             }
 
@@ -126,14 +126,14 @@ namespace GestorBarberia.Application.Services
                 if (!BarberiaValidations.ValidationsBarberia(modelDto))
                 {
                     result.Success = false;
-                    result.Message = "Los campos para agregar un barbero NO cumplen con las validaciones establecidas";
+                    result.Message = "Los campos para agregar un barbero NO cumplen con las validaciones establecidas.";
                     return result;
                 }
 
                 if (this.BarberoRepository.VerifyNameBarbero(modelDto.Nombre))
                 {
                     result.Success = false;
-                    result.Message = "Ya existe un barbero con ese nombre";
+                    result.Message = "Ya existe un barbero con ese nombre.";
                     return result;
                 }
 
@@ -141,7 +141,7 @@ namespace GestorBarberia.Application.Services
 
                 string PasswordHashed = BCrypt.Net.BCrypt.EnhancedHashPassword(modelDto.Password);
 
-                this.BarberoRepository.Add(new Barbero()
+                this.BarberoRepository.Add(new Barberos()
                 {
                     BarberoId = modelDto.BarberoId,
                     Nombre = modelDto.Nombre,
@@ -151,13 +151,13 @@ namespace GestorBarberia.Application.Services
                     Imgbarbero = modelDto.Imgbarbero, 
                 });
 
-                result.Message = "Se ha Agregado Correctamente el Barbero";
+                result.Message = "Se ha Agregado Correctamente el Barbero.";
             }
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Ha ocurrido un error guardando el barbero";
-                this.logger.LogError($"Ha ocurrido un error guardando el barbero en barberoService + {ex.Message}");
+                result.Message = "Ha ocurrido un error guardando el barbero.";
+                this.logger.LogError($"Ha ocurrido un error guardando el barbero en barberoService + {ex.Message}.");
             }
 
             return result;
@@ -176,7 +176,7 @@ namespace GestorBarberia.Application.Services
                 if (!BarberiaValidations.ValidationsBarberia(modelDto))
                 {
                     result.Success = false;
-                    result.Message = "Los campos para actualizar un barbero NO cumplen con las validaciones establecidas";
+                    result.Message = "Los campos para actualizar un barbero NO cumplen con las validaciones establecidas.";
                     return result;
                 }
 
@@ -189,13 +189,13 @@ namespace GestorBarberia.Application.Services
 
                 this.BarberoRepository.Update(BarberoExistente);
                 this.BarberoRepository.SaveChanged();
-                result.Message = "Barbero Actualizado Correctamente";
+                result.Message = "Barbero Actualizado Correctamente.";
             }
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Ha ocurrido un error actualizando el Barbero";
-                this.logger.LogError($"Ha ocurrido un error actualizando el Barbero: {ex.Message}");
+                result.Message = "Ha ocurrido un error actualizando el Barbero.";
+                this.logger.LogError($"Ha ocurrido un error actualizando el Barbero: {ex.Message}.");
             }
 
             return result;
@@ -215,20 +215,20 @@ namespace GestorBarberia.Application.Services
                 if (BarberoId is null)
                 {
                     result.Success = false;
-                    result.Message = "Ha ocurrido un error obteniendo el id del barbero";
+                    result.Message = "Ha ocurrido un error obteniendo el id del barbero.";
                     return result;
                 }
 
                 this.BarberoRepository.Remove(BarberoId);
                 this.BarberoRepository.SaveChanged();
-                result.Message = "Barbero Removido Correctamente";
+                result.Message = "Barbero Removido Correctamente.";
             }
             catch (Exception ex)
             {
 
                 result.Success = false;
-                result.Message = "Ha ocurrido un error eliminando el barbero";
-                this.logger.LogError($"Ha ocurrido un error eliminando el barbero: {ex.Message}");
+                result.Message = "Ha ocurrido un error eliminando el barbero.";
+                this.logger.LogError($"Ha ocurrido un error eliminando el barbero: {ex.Message}.");
 
             }
 

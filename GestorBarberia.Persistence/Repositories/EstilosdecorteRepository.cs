@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace GestorBarberia.Persistence.Repositories
 {
-    public class EstilosdecorteRepository : BaseRepository<Estilosdecorte>, IEstilosdecorteRepository 
+    public class EstilosdecorteRepository : BaseRepository<Estilosdecortes>, IEstilosdecorteRepository 
     {
 
         private readonly DbContextBarberia dbContextBarberia;
@@ -34,35 +34,35 @@ namespace GestorBarberia.Persistence.Repositories
             {
 
                 EstilosModels = base.GetEntities()
-                    .Select(em => em.ConvertEstilosToModel())
+                    .Select(estilos => estilos.ConvertEstilosToModel())
                     .ToList();
                 
             }
             catch (Exception ex)
             {
 
-                this.logger.LogError($"Ha ocurrido un error listando los estilos de corte: {ex.ToString()}");
+                this.logger.LogError($"Ha ocurrido un error listando los estilos de corte: {ex.ToString()}.");
             }
 
             return EstilosModels;
 
         }
 
-        public override void Add(Estilosdecorte entity)
+        public override void Add(Estilosdecortes entity)
         {
             base.Add(entity);
             base.SaveChanged();
         }
 
-        public override void Update(Estilosdecorte entity)
+        public override void Update(Estilosdecortes entity)
         {
             try
             {
-                Estilosdecorte EstiloCorteId = this.GetById(entity.EstiloId);
+                Estilosdecortes EstiloCorteId = this.GetById(entity.EstiloId);
 
                 if (EstiloCorteId is null)
                 {
-                    throw new EstilosdecorteExceptions("Ha ocurrido un error obteniendo el Id del estilo de corte");
+                    throw new EstilosdecorteExceptions("Ha ocurrido un error obteniendo el Id del estilo de corte.");
                 }
 
                 EstiloCorteId.Nombre = entity.Nombre;
@@ -78,21 +78,21 @@ namespace GestorBarberia.Persistence.Repositories
             }
             catch (Exception ex)
             {
-                this.logger.LogError($"Ha ocurrido un error actualizando el estilo de corte: {ex.ToString()}");
+                this.logger.LogError($"Ha ocurrido un error actualizando el estilo de corte: {ex.ToString()}.");
             }
 
         }
 
-        public override void Remove(Estilosdecorte entity)
+        public override void Remove(Estilosdecortes entity)
         {
 
             try
             {
-                Estilosdecorte EstiloCorteId = this.GetById(entity.EstiloId);
+                Estilosdecortes EstiloCorteId = this.GetById(entity.EstiloId);
 
                 if(EstiloCorteId is null)
                 {
-                    throw new EstilosdecorteExceptions("Ha ocurrido un error obteniendo el Id del estilo de corte");
+                    throw new EstilosdecorteExceptions("Ha ocurrido un error obteniendo el Id del estilo de corte.");
                 }
 
                 base.Remove(EstiloCorteId);
@@ -101,9 +101,10 @@ namespace GestorBarberia.Persistence.Repositories
             }
             catch (Exception ex)
             {
-                this.logger.LogError($"Ha ocurrido un error elimando el estilo de corte: {ex.ToString()}");
+                this.logger.LogError($"Ha ocurrido un error elimando el estilo de corte: {ex.ToString()}.");
             }
 
         }
     }
 }
+

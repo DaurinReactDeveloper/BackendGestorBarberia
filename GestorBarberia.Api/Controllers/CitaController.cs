@@ -21,7 +21,21 @@ namespace GestorBarberia.Api.Controllers
         }
 
         // GET: api/<CitaController>
-        [Authorize(Roles = "cliente")]
+        [HttpGet("GetCitasById/{clienteId}")]
+        public IActionResult GetCitasById(int clienteId)
+        {
+
+            var result = this.Citaservices.GetCitaById(clienteId);
+
+            if (result is null)
+            {
+                return BadRequest(result);
+            }
+
+            return Ok(result);
+        }
+
+        [Authorize(Roles = "barbero,cliente,admin")]
         [HttpGet("GetCitasByCliente/{clienteId}")]
         public IActionResult GetCitasByCliente(int clienteId)
         {

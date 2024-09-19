@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace GestorBarberia.Persistence.Interface
 {
-    public interface IClienteRepository : IBaseRepository<Cliente>
+    public interface IClienteRepository : IBaseRepository<Clientes>
     {
         List<ClienteModel> GetClientes();
 

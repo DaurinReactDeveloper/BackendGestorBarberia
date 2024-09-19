@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace GestorBarberia.Persistence.Interface
 {
-    public interface IAdministradorRepository : IBaseRepository<Administrador>
+    public interface IAdministradorRepository : IBaseRepository<Administradores>
     {
 
         AdministradorModel GetAdministrador(string name,string password);

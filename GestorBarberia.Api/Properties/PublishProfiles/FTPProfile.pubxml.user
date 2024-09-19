@@ -7,7 +7,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAtV2Uo76br0OOrkGH+glrHgAAAAACAAAAAAAQZgAAAAEAACAAAAAJmkpnFpwFZDCIzLvsfpHj/4BAyAg/KrLXyGfmxYlfWQAAAAAOgAAAAAIAACAAAAAv1vEHPtg2q+OFdk6IHv9uYGdy3gA1082hw0Hu4DfcJiAAAABFk51r8AmhsbfeZ50JnIy9TKYBn3fbzgLJyyXCg0fe/EAAAAAwhCvMLa874YZaGhQZGy3MhAMGDGRw5t/K/9DKbz3puhJuXkGkIt0t64WLDsHzURViKzZ2QvPliW0sTgSsqyCp</EncryptedPassword>
     <_PublishTargetUrl>ftp://198.37.116.25/www.GestorBarberiawebapi.somee.com</_PublishTargetUrl>
-    <History>True|2024-09-06T21:36:27.8607897Z||;False|2024-09-06T17:25:26.6406441-04:00||;False|2024-09-06T17:24:16.0316538-04:00||;True|2024-09-06T17:21:50.6251666-04:00||;True|2024-08-27T22:04:48.9494252-04:00||;True|2024-08-21T16:03:29.8611868-04:00||;True|2024-08-21T15:06:32.9913763-04:00||;</History>
+    <History>True|2024-09-17T16:02:23.6453552Z||;True|2024-09-06T17:36:27.8607897-04:00||;False|2024-09-06T17:25:26.6406441-04:00||;False|2024-09-06T17:24:16.0316538-04:00||;True|2024-09-06T17:21:50.6251666-04:00||;True|2024-08-27T22:04:48.9494252-04:00||;True|2024-08-21T16:03:29.8611868-04:00||;True|2024-08-21T15:06:32.9913763-04:00||;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -15,10 +15,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/29/2022 11:04:06</publishTime>
     </File>
     <File Include="appsettings.Development.json">
-      <publishTime>09/06/2024 17:24:32</publishTime>
+      <publishTime>09/17/2024 11:54:50</publishTime>
     </File>
     <File Include="appsettings.json">
-      <publishTime>09/06/2024 17:24:28</publishTime>
+      <publishTime>09/17/2024 11:55:01</publishTime>
     </File>
     <File Include="ar/Humanizer.resources.dll">
       <publishTime>01/29/2022 11:04:06</publishTime>
@@ -156,49 +156,49 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/14/2021 14:38:18</publishTime>
     </File>
     <File Include="GestorBarberia.Api.deps.json">
-      <publishTime>09/06/2024 17:30:57</publishTime>
+      <publishTime>09/17/2024 11:57:00</publishTime>
     </File>
     <File Include="GestorBarberia.Api.dll">
-      <publishTime>09/06/2024 17:30:53</publishTime>
+      <publishTime>09/17/2024 11:56:53</publishTime>
     </File>
     <File Include="GestorBarberia.Api.exe">
-      <publishTime>09/06/2024 17:30:53</publishTime>
+      <publishTime>09/17/2024 11:56:53</publishTime>
     </File>
     <File Include="GestorBarberia.Api.pdb">
-      <publishTime>09/06/2024 17:30:53</publishTime>
+      <publishTime>09/17/2024 11:56:53</publishTime>
     </File>
     <File Include="GestorBarberia.Api.runtimeconfig.json">
       <publishTime>09/06/2024 17:02:08</publishTime>
     </File>
     <File Include="GestorBarberia.Application.dll">
-      <publishTime>09/06/2024 17:02:06</publishTime>
+      <publishTime>09/17/2024 11:56:41</publishTime>
     </File>
     <File Include="GestorBarberia.Application.pdb">
-      <publishTime>09/06/2024 17:02:06</publishTime>
+      <publishTime>09/17/2024 11:56:41</publishTime>
     </File>
     <File Include="GestorBarberia.Domain.dll">
-      <publishTime>09/06/2024 17:02:04</publishTime>
+      <publishTime>09/17/2024 11:56:39</publishTime>
     </File>
     <File Include="GestorBarberia.Domain.pdb">
-      <publishTime>09/06/2024 17:02:04</publishTime>
+      <publishTime>09/17/2024 11:56:39</publishTime>
     </File>
     <File Include="GestorBarberia.Infrastructure.dll">
-      <publishTime>09/06/2024 17:02:05</publishTime>
+      <publishTime>09/17/2024 11:56:40</publishTime>
     </File>
     <File Include="GestorBarberia.Infrastructure.pdb">
-      <publishTime>09/06/2024 17:02:05</publishTime>
+      <publishTime>09/17/2024 11:56:40</publishTime>
     </File>
     <File Include="GestorBarberia.loc.dll">
-      <publishTime>09/06/2024 17:02:07</publishTime>
+      <publishTime>09/17/2024 11:56:43</publishTime>
     </File>
     <File Include="GestorBarberia.loc.pdb">
-      <publishTime>09/06/2024 17:02:07</publishTime>
+      <publishTime>09/17/2024 11:56:43</publishTime>
     </File>
     <File Include="GestorBarberia.Persistence.dll">
-      <publishTime>09/06/2024 17:02:05</publishTime>
+      <publishTime>09/17/2024 11:56:40</publishTime>
     </File>
     <File Include="GestorBarberia.Persistence.pdb">
-      <publishTime>09/06/2024 17:02:05</publishTime>
+      <publishTime>09/17/2024 11:56:40</publishTime>
     </File>
     <File Include="he/Humanizer.resources.dll">
       <publishTime>01/29/2022 11:04:08</publishTime>
@@ -783,7 +783,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/29/2022 11:04:12</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>09/06/2024 17:30:58</publishTime>
+      <publishTime>09/17/2024 11:57:00</publishTime>
     </File>
     <File Include="zh-CN/Humanizer.resources.dll">
       <publishTime>01/29/2022 11:04:12</publishTime>

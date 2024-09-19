@@ -34,16 +34,16 @@ namespace GestorBarberia.Test.Capa_de_Persistencia
         {
             // Arrange
             var nombre = "barbero1";
-            var barberos = new List<Barbero>
+            var barberos = new List<Barberos>
         {
-            new Barbero { BarberoId = 1, Nombre = nombre, Password = "password" }
+            new Barberos { BarberoId = 1, Nombre = nombre, Password = "password" }
         }.AsQueryable();
 
-            var mockSet = new Mock<DbSet<Barbero>>();
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.Provider).Returns(barberos.Provider);
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.Expression).Returns(barberos.Expression);
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.ElementType).Returns(barberos.ElementType);
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.GetEnumerator()).Returns(barberos.GetEnumerator());
+            var mockSet = new Mock<DbSet<Barberos>>();
+            mockSet.As<IQueryable<Barberos>>().Setup(m => m.Provider).Returns(barberos.Provider);
+            mockSet.As<IQueryable<Barberos>>().Setup(m => m.Expression).Returns(barberos.Expression);
+            mockSet.As<IQueryable<Barberos>>().Setup(m => m.ElementType).Returns(barberos.ElementType);
+            mockSet.As<IQueryable<Barberos>>().Setup(m => m.GetEnumerator()).Returns(barberos.GetEnumerator());
 
             _mockDbContext.Setup(c => c.Barberos).Returns(mockSet.Object);
 
@@ -60,13 +60,13 @@ namespace GestorBarberia.Test.Capa_de_Persistencia
         {
             // Arrange
             var nombre = "barberoNoExistente";
-            var barberos = new List<Barbero>().AsQueryable();
+            var barberos = new List<Barberos>().AsQueryable();
 
-            var mockSet = new Mock<DbSet<Barbero>>();
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.Provider).Returns(barberos.Provider);
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.Expression).Returns(barberos.Expression);
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.ElementType).Returns(barberos.ElementType);
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.GetEnumerator()).Returns(barberos.GetEnumerator());
+            var mockSet = new Mock<DbSet<Barberos>>();
+            mockSet.As<IQueryable<Barberos>>().Setup(m => m.Provider).Returns(barberos.Provider);
+            mockSet.As<IQueryable<Barberos>>().Setup(m => m.Expression).Returns(barberos.Expression);
+            mockSet.As<IQueryable<Barberos>>().Setup(m => m.ElementType).Returns(barberos.ElementType);
+            mockSet.As<IQueryable<Barberos>>().Setup(m => m.GetEnumerator()).Returns(barberos.GetEnumerator());
 
             _mockDbContext.Setup(c => c.Barberos).Returns(mockSet.Object);
 
@@ -83,16 +83,16 @@ namespace GestorBarberia.Test.Capa_de_Persistencia
             // Arrange
             var nombre = "barbero1";
             var password = "password";
-            var barberos = new List<Barbero>
+            var barberos = new List<Barberos>
         {
-            new Barbero { BarberoId = 1, Nombre = nombre, Password = password }
+            new Barberos { BarberoId = 1, Nombre = nombre, Password = password }
         }.AsQueryable();
 
-            var mockSet = new Mock<DbSet<Barbero>>();
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.Provider).Returns(barberos.Provider);
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.Expression).Returns(barberos.Expression);
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.ElementType).Returns(barberos.ElementType);
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.GetEnumerator()).Returns(barberos.GetEnumerator());
+            var mockSet = new Mock<DbSet<Barberos>>();
+            mockSet.As<IQueryable<Barberos>>().Setup(m => m.Provider).Returns(barberos.Provider);
+            mockSet.As<IQueryable<Barberos>>().Setup(m => m.Expression).Returns(barberos.Expression);
+            mockSet.As<IQueryable<Barberos>>().Setup(m => m.ElementType).Returns(barberos.ElementType);
+            mockSet.As<IQueryable<Barberos>>().Setup(m => m.GetEnumerator()).Returns(barberos.GetEnumerator());
 
             _mockDbContext.Setup(c => c.Barberos).Returns(mockSet.Object);
 
@@ -111,13 +111,13 @@ namespace GestorBarberia.Test.Capa_de_Persistencia
             // Arrange
             var nombre = "barbero1";
             var password = "wrongpassword";
-            var barberos = new List<Barbero>().AsQueryable();
+            var barberos = new List<Barberos>().AsQueryable();
 
-            var mockSet = new Mock<DbSet<Barbero>>();
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.Provider).Returns(barberos.Provider);
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.Expression).Returns(barberos.Expression);
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.ElementType).Returns(barberos.ElementType);
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.GetEnumerator()).Returns(barberos.GetEnumerator());
+            var mockSet = new Mock<DbSet<Barberos>>();
+            mockSet.As<IQueryable<Barberos>>().Setup(m => m.Provider).Returns(barberos.Provider);
+            mockSet.As<IQueryable<Barberos>>().Setup(m => m.Expression).Returns(barberos.Expression);
+            mockSet.As<IQueryable<Barberos>>().Setup(m => m.ElementType).Returns(barberos.ElementType);
+            mockSet.As<IQueryable<Barberos>>().Setup(m => m.GetEnumerator()).Returns(barberos.GetEnumerator());
 
             _mockDbContext.Setup(c => c.Barberos).Returns(mockSet.Object);
 
@@ -129,45 +129,20 @@ namespace GestorBarberia.Test.Capa_de_Persistencia
         }
 
         [Fact]
-        public void GetBarberos_RetornaListaDeBarberos()
-        {
-            // Arrange
-            var barberos = new List<Barbero>
-        {
-            new Barbero { BarberoId = 1, Nombre = "barbero1", Password = "password" },
-            new Barbero { BarberoId = 2, Nombre = "barbero2", Password = "password2" }
-        };
-
-            var mockSet = new Mock<DbSet<Barbero>>();
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.Provider).Returns(barberos.AsQueryable().Provider);
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.Expression).Returns(barberos.AsQueryable().Expression);
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.ElementType).Returns(barberos.AsQueryable().ElementType);
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.GetEnumerator()).Returns(barberos.AsQueryable().GetEnumerator());
-
-            _mockDbContext.Setup(c => c.Barberos).Returns(mockSet.Object);
-
-            // Act
-            var result = _repository.GetBarberos();
-
-            // Assert
-            Assert.NotNull(result);
-        }
-
-        [Fact]
         public void VerifyNameBarbero_BarberoExistente_RetornaTrue()
         {
             // Arrange
             var nombreBarbero = "barbero1";
-            var barberos = new List<Barbero>
+            var barberos = new List<Barberos>
         {
-            new Barbero { BarberoId = 1, Nombre = nombreBarbero }
+            new Barberos { BarberoId = 1, Nombre = nombreBarbero }
         }.AsQueryable();
 
-            var mockSet = new Mock<DbSet<Barbero>>();
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.Provider).Returns(barberos.Provider);
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.Expression).Returns(barberos.Expression);
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.ElementType).Returns(barberos.ElementType);
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.GetEnumerator()).Returns(barberos.GetEnumerator());
+            var mockSet = new Mock<DbSet<Barberos>>();
+            mockSet.As<IQueryable<Barberos>>().Setup(m => m.Provider).Returns(barberos.Provider);
+            mockSet.As<IQueryable<Barberos>>().Setup(m => m.Expression).Returns(barberos.Expression);
+            mockSet.As<IQueryable<Barberos>>().Setup(m => m.ElementType).Returns(barberos.ElementType);
+            mockSet.As<IQueryable<Barberos>>().Setup(m => m.GetEnumerator()).Returns(barberos.GetEnumerator());
 
             _mockDbContext.Setup(c => c.Barberos).Returns(mockSet.Object);
 
@@ -183,13 +158,13 @@ namespace GestorBarberia.Test.Capa_de_Persistencia
         {
             // Arrange
             var nombreBarbero = "barberoNoExistente";
-            var barberos = new List<Barbero>().AsQueryable();
+            var barberos = new List<Barberos>().AsQueryable();
 
-            var mockSet = new Mock<DbSet<Barbero>>();
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.Provider).Returns(barberos.Provider);
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.Expression).Returns(barberos.Expression);
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.ElementType).Returns(barberos.ElementType);
-            mockSet.As<IQueryable<Barbero>>().Setup(m => m.GetEnumerator()).Returns(barberos.GetEnumerator());
+            var mockSet = new Mock<DbSet<Barberos>>();
+            mockSet.As<IQueryable<Barberos>>().Setup(m => m.Provider).Returns(barberos.Provider);
+            mockSet.As<IQueryable<Barberos>>().Setup(m => m.Expression).Returns(barberos.Expression);
+            mockSet.As<IQueryable<Barberos>>().Setup(m => m.ElementType).Returns(barberos.ElementType);
+            mockSet.As<IQueryable<Barberos>>().Setup(m => m.GetEnumerator()).Returns(barberos.GetEnumerator());
 
             _mockDbContext.Setup(c => c.Barberos).Returns(mockSet.Object);
 

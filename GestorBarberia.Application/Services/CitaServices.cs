@@ -32,6 +32,36 @@ namespace GestorBarberia.Application.Services
             this.barberoServices = barberoServices;
         }
 
+        public ServiceResult GetCitaById(int citaId)
+        {
+            ServiceResult result = new ServiceResult();
+
+            try
+            {
+                var Cita = this.citaRepository.GetCitaById(citaId);
+
+                if (Cita == null) { 
+                
+                    result.Success = false;
+                    result.Message = "La Cita no Existe.";
+                    return result;
+                
+                }
+
+                result.Data = Cita;
+                result.Message = "Cita Obtenida Correctamente.";
+
+            }
+            catch (Exception ex)
+            {
+                result.Success = false;
+                result.Message = "Ha ocurrido un error obteniendo las cita.";
+                this.logger.LogError($"Ha ocurrido un error obteniendo la cita: {ex.Message}.");
+            }
+
+            return result;
+        }
+
         public ServiceResult GetCitaByBarberoId(int barberoId)
         {
 
@@ -45,20 +75,20 @@ namespace GestorBarberia.Application.Services
                 {
 
                     result.Success = false;
-                    result.Message = "No se puedo obtener el listado de citas";
+                    result.Message = "No se puedo obtener el listado de citas.";
                     return result;
 
                 }
 
                 result.Data = CitasBarbero;
-                result.Message = "Citas Obtenidas Correctamente";
+                result.Message = "Citas Obtenidas Correctamente.";
             }
 
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Ha ocurrido un erro obteniendo las citas";
-                this.logger.LogError($"Ha ocurrido un error obtenindo las citas: {ex.Message}");
+                result.Message = "Ha ocurrido un error obteniendo las citas.";
+                this.logger.LogError($"Ha ocurrido un error obteniendo las citas: {ex.Message}.");
             }
 
             return result;
@@ -77,20 +107,20 @@ namespace GestorBarberia.Application.Services
                 {
 
                     result.Success = false;
-                    result.Message = "No se puedo obtener el listado de citas";
+                    result.Message = "No se puedo obtener el listado de citas.";
                     return result;
 
                 }
 
                 result.Data = CitasCliente;
-                result.Message = "Citas Obtenidas Correctamente";
+                result.Message = "Citas Obtenidas Correctamente.";
             }
 
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Ha ocurrido un erro obteniendo las citas";
-                this.logger.LogError($"Ha ocurrido un error obtenindo las citas: {ex.Message}");
+                result.Message = "Ha ocurrido un error obteniendo las citas.";
+                this.logger.LogError($"Ha ocurrido un error obteniendo las citas: {ex.Message}.");
             }
 
             return result;
@@ -104,13 +134,13 @@ namespace GestorBarberia.Application.Services
             if (!CitaValidations.ValidationsCita(modelDto))
             {
                 result.Success = false;
-                result.Message = "Los campos para agregar una cita NO cumplen con las validaciones establecidas";
+                result.Message = "Los campos para agregar una cita NO cumplen con las validaciones establecidas.";
                 return result;
             }
 
             try
             {
-                this.citaRepository.Add(new Cita()
+                this.citaRepository.Add(new Citas()
                 {
 
                     CitaId = modelDto.CitaId,
@@ -129,7 +159,7 @@ namespace GestorBarberia.Application.Services
                 if (BarberoId is null || ClienteId is null)
                 {
                     result.Success = false;
-                    result.Message = "El Barbero asociado a la cita no existe";
+                    result.Message = "El Barbero asociado a la cita no existe.";
                     return result;
                 }
 
@@ -138,15 +168,15 @@ namespace GestorBarberia.Application.Services
                 this.emailServices.SendEmail(BarberoId.Data.Email, "Nueva Peticion de Cita", emailBody, true);
 
                 this.citaRepository.SaveChanged();
-                result.Message = "Cita Agregada Correctamente";
+                result.Message = "Cita Agregada Correctamente.";
 
             }
             catch (Exception ex)
             {
 
                 result.Success = false;
-                result.Message = "Ha ocurrido un error agregando la cita";
-                this.logger.LogError($"Ha ocurrido un error agregando la cita: {ex.Message}");
+                result.Message = "Ha ocurrido un error agregando la cita.";
+                this.logger.LogError($"Ha ocurrido un error agregando la cita: {ex.Message}.");
 
             }
 
@@ -165,7 +195,7 @@ namespace GestorBarberia.Application.Services
                 if (!CitaValidations.ValidationsCita(modelDto))
                 {
                     result.Success = false;
-                    result.Message = "Los campos para actualizar una cita NO cumplen con las validaciones establecidas";
+                    result.Message = "Los campos para actualizar una cita NO cumplen con las validaciones establecidas.";
                     return result;
                 }
 
@@ -177,14 +207,14 @@ namespace GestorBarberia.Application.Services
 
                 this.citaRepository.Update(citaUpdate);
                 this.citaRepository.SaveChanged();
-                result.Message = "Cita Actualizada Correctamente";
+                result.Message = "Cita Actualizada Correctamente.";
             }
 
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Ha ocurrido un error actualizando la cita";
-                this.logger.LogError($"Ha ocurrido un error actualizando la cita: {ex.Message}");
+                result.Message = "Ha ocurrido un error actualizando la cita.";
+                this.logger.LogError($"Ha ocurrido un error actualizando la cita: {ex.Message}.");
             }
 
             return result;
@@ -202,7 +232,7 @@ namespace GestorBarberia.Application.Services
                 if (citaUpdate is null)
                 {
                     result.Success = false;
-                    result.Message = "La cita no existe";
+                    result.Message = "La cita no existe.";
                     return result;
                 }
 
@@ -213,7 +243,7 @@ namespace GestorBarberia.Application.Services
                 {
                     this.citaRepository.UpdateEstado(citaUpdate);
                     this.citaRepository.SaveChanged();
-                    result.Message = "Estado de la Cita Cambiado Correctamente";
+                    result.Message = "Estado de la Cita Cambiado Correctamente.";
                     return result;
                 }
 
@@ -223,7 +253,7 @@ namespace GestorBarberia.Application.Services
                 if (cliente is null)
                 {
                     result.Success = false;
-                    result.Message = "El cliente asociado a la cita no existe";
+                    result.Message = "El cliente asociado a la cita no existe.";
                     return result;
                 }
 
@@ -238,7 +268,7 @@ namespace GestorBarberia.Application.Services
                     this.citaRepository.UpdateEstado(citaUpdate);
                     this.citaRepository.SaveChanged();
 
-                    result.Message = "Estado de la Cita Cambiado Correctamente y Notificación Enviada";
+                    result.Message = "Estado de la Cita Cambiado Correctamente y Notificación Enviada.";
                     return result;
                 }
 
@@ -250,13 +280,13 @@ namespace GestorBarberia.Application.Services
 
                 this.citaRepository.UpdateEstado(citaUpdate);
                 this.citaRepository.SaveChanged();
-                result.Message = "Estado de la Cita Cambiado Correctamente y Notificación Enviada";
+                result.Message = "Estado de la Cita Cambiado Correctamente y Notificación Enviada.";
             }
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Ha ocurrido un error actualizando la cita";
-                this.logger.LogError($"Ha ocurrido un error actualizando la cita: {ex.Message}");
+                result.Message = "Ha ocurrido un error actualizando la cita.";
+                this.logger.LogError($"Ha ocurrido un error actualizando la cita: {ex.Message}.");
             }
 
             return result;
@@ -274,27 +304,27 @@ namespace GestorBarberia.Application.Services
                 if (citaRemove is null)
                 {
                     result.Success = false;
-                    result.Message = "Ha ocurrido un error obteniendo el id de la cita";
+                    result.Message = "Ha ocurrido un error obteniendo el id de la cita.";
                     return result;
                 }
 
                 if (modelDto.Estado != "Rechazada" && modelDto.Estado != "Realizada" && modelDto.Estado != "Cancelada")
                 {
                     result.Success = false;
-                    result.Message = "Solo puedes Eliminar las Rechazadas, Realizadas o Cancelada";
+                    result.Message = "Solo puedes Eliminar las Rechazadas, Realizadas o Cancelada.";
                     return result;
                 }
 
                 this.citaRepository.Remove(citaRemove);
                 this.citaRepository.SaveChanged();
-                result.Message = "Cita Removida Correctamente";
+                result.Message = "Cita Removida Correctamente.";
 
             }
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Ha ocurrido un error eliminado la cita";
-                this.logger.LogError($"Ha ocurrido un error eliminando la cita: {ex.Message}");
+                result.Message = "Ha ocurrido un error eliminado la cita.";
+                this.logger.LogError($"Ha ocurrido un error eliminando la cita: {ex.Message}.");
             }
 
             return result;

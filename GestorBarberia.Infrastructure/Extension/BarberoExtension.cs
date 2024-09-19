@@ -12,7 +12,7 @@ namespace GestorBarberia.Infrastructure.Extension
     public static class BarberoExtension
     {
 
-        public static BarberoModel ConverteBarberoToModel(this Barbero BarberoEntity)
+        public static BarberoModel ConverteBarberoToModel(this Barberos BarberoEntity)
         {
 
             var barberoModel = new BarberoModel()

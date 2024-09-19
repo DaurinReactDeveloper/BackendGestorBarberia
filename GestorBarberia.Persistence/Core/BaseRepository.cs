@@ -28,7 +28,7 @@ namespace GestorBarberia.Persistence.Core
             this.Dbset.Add(entity);
         }
 
-        public virtual Entity GetById(int id)
+        public virtual Entity GetById(int? id)
         {
             return this.Dbset.Find(id);
         }

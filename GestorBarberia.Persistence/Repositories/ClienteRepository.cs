@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace GestorBarberia.Persistence.Repositories
 {
-    public class ClienteRepository : BaseRepository<Cliente>, IClienteRepository
+    public class ClienteRepository : BaseRepository<Clientes>, IClienteRepository
     {
 
         private readonly DbContextBarberia dbContextBarberia;
@@ -42,7 +42,7 @@ namespace GestorBarberia.Persistence.Repositories
             catch (Exception ex)
 
             {
-                this.logger.LogError($"Ha ocurrido un error listando los clientes: {ex.ToString()}");
+                this.logger.LogError($"Ha ocurrido un error listando los clientes: {ex.ToString()}.");
             }
 
             return clienteModels;
@@ -67,8 +67,8 @@ namespace GestorBarberia.Persistence.Repositories
             }
             catch (Exception ex)
             {
-                this.logger.LogError($"Ha ocurrido un error obteniendo el cliente: {ex.Message}");
-                throw new ClienteExceptions("Ha ocurrido un error obteniendo el cliente");
+                this.logger.LogError($"Ha ocurrido un error obteniendo el cliente: {ex.ToString()}.");
+                throw new ClienteExceptions("Ha ocurrido un error obteniendo el cliente.");
             }
         }
 
@@ -93,27 +93,27 @@ namespace GestorBarberia.Persistence.Repositories
 
                 catch (Exception ex)
                 {
-                    this.logger.LogError($"Ha ocurrido un error obteniendo el barbero: {ex.Message}");
-                    throw new ClienteExceptions("Ha ocurrido un error obteniendo el cliente");
+                    this.logger.LogError($"Ha ocurrido un error obteniendo el barbero: {ex.ToString()}.");
+                    throw new ClienteExceptions("Ha ocurrido un error obteniendo el cliente.");
                 }
         }
 
-        public override void Add(Cliente entity)
+        public override void Add(Clientes entity)
         {
             base.Add(entity);
             base.SaveChanged();
         }
 
-        public override void Update(Cliente entity)
+        public override void Update(Clientes entity)
         {
             try
             {
 
-                Cliente clienteEntity = this.GetById(entity.ClienteId);
+                Clientes clienteEntity = this.GetById(entity.ClienteId);
 
                 if (clienteEntity is null)
                 {
-                    throw new ClienteExceptions("Ha ocurrido un error obteniendo el Id del cliente");
+                    throw new ClienteExceptions("Ha ocurrido un error obteniendo el Id del cliente.");
                 }
 
                 clienteEntity.ClienteId = entity.ClienteId;
@@ -130,23 +130,23 @@ namespace GestorBarberia.Persistence.Repositories
             catch (Exception ex)
             {
 
-                this.logger.LogError($"Ha ocurrido un error actualizando el cliente: {ex.ToString()}");
+                this.logger.LogError($"Ha ocurrido un error actualizando el cliente: {ex.ToString()}.");
 
             }
 
         }
 
-        public override void Remove(Cliente entity)
+        public override void Remove(Clientes entity)
         {
 
             try
             {
 
-                Cliente clienteRemove = this.GetById(entity.ClienteId);
+                Clientes clienteRemove = this.GetById(entity.ClienteId);
 
                 if(clienteRemove is null)
                 {
-                    throw new ClienteExceptions("Ha ocurrido un error obteniendo el Id del cliente");
+                    throw new ClienteExceptions("Ha ocurrido un error obteniendo el Id del cliente.");
                 }
 
                 base.Remove(clienteRemove);
@@ -157,7 +157,7 @@ namespace GestorBarberia.Persistence.Repositories
             catch (Exception ex)
             {
 
-                this.logger.LogError($"Ha ocurrido un error eliminando el cliente: {ex.ToString()}");
+                this.logger.LogError($"Ha ocurrido un error eliminando el cliente: {ex.ToString()}.");
 
             }
 
@@ -176,8 +176,8 @@ namespace GestorBarberia.Persistence.Repositories
             }
             catch (Exception ex)
             {
-                this.logger.LogError($"Ha ocurrido un error verificando el nombre del cliente: {ex.Message}");
-                throw new ClienteExceptions("Ha ocurrido un error verificando el nombre del cliente");
+                this.logger.LogError($"Ha ocurrido un error verificando el nombre del cliente: {ex.ToString()}.");
+                throw new ClienteExceptions("Ha ocurrido un error verificando el nombre del cliente.");
             }
         }
 

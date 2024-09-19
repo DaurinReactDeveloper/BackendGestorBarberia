@@ -34,18 +34,18 @@ namespace GestorBarberia.Test.Capa_de_Persistencia
             // Arrange
             var nombre = "admin";
             var password = "password";
-            var administradores = new List<Administrador>
+            var administradores = new List<Administradores>
         {
-            new Administrador { Nombre = nombre, Password = password }
+            new Administradores { Nombre = nombre, Password = password }
         }.AsQueryable();
 
-            var mockSet = new Mock<DbSet<Administrador>>();
-            mockSet.As<IQueryable<Administrador>>().Setup(m => m.Provider).Returns(administradores.Provider);
-            mockSet.As<IQueryable<Administrador>>().Setup(m => m.Expression).Returns(administradores.Expression);
-            mockSet.As<IQueryable<Administrador>>().Setup(m => m.ElementType).Returns(administradores.ElementType);
-            mockSet.As<IQueryable<Administrador>>().Setup(m => m.GetEnumerator()).Returns(administradores.GetEnumerator());
+            var mockSet = new Mock<DbSet<Administradores>>();
+            mockSet.As<IQueryable<Administradores>>().Setup(m => m.Provider).Returns(administradores.Provider);
+            mockSet.As<IQueryable<Administradores>>().Setup(m => m.Expression).Returns(administradores.Expression);
+            mockSet.As<IQueryable<Administradores>>().Setup(m => m.ElementType).Returns(administradores.ElementType);
+            mockSet.As<IQueryable<Administradores>>().Setup(m => m.GetEnumerator()).Returns(administradores.GetEnumerator());
 
-            _mockDbContext.Setup(c => c.administradores).Returns(mockSet.Object);
+            _mockDbContext.Setup(c => c.Administradores).Returns(mockSet.Object);
 
             // Act
             var result = _repository.GetAdministrador(nombre, password);
@@ -62,15 +62,15 @@ namespace GestorBarberia.Test.Capa_de_Persistencia
             // Arrange
             var nombre = "admin";
             var password = "wrongpassword";
-            var administradores = new List<Administrador>().AsQueryable();
+            var administradores = new List<Administradores>().AsQueryable();
 
-            var mockSet = new Mock<DbSet<Administrador>>();
-            mockSet.As<IQueryable<Administrador>>().Setup(m => m.Provider).Returns(administradores.Provider);
-            mockSet.As<IQueryable<Administrador>>().Setup(m => m.Expression).Returns(administradores.Expression);
-            mockSet.As<IQueryable<Administrador>>().Setup(m => m.ElementType).Returns(administradores.ElementType);
-            mockSet.As<IQueryable<Administrador>>().Setup(m => m.GetEnumerator()).Returns(administradores.GetEnumerator());
+            var mockSet = new Mock<DbSet<Administradores>>();
+            mockSet.As<IQueryable<Administradores>>().Setup(m => m.Provider).Returns(administradores.Provider);
+            mockSet.As<IQueryable<Administradores>>().Setup(m => m.Expression).Returns(administradores.Expression);
+            mockSet.As<IQueryable<Administradores>>().Setup(m => m.ElementType).Returns(administradores.ElementType);
+            mockSet.As<IQueryable<Administradores>>().Setup(m => m.GetEnumerator()).Returns(administradores.GetEnumerator());
 
-            _mockDbContext.Setup(c => c.administradores).Returns(mockSet.Object);
+            _mockDbContext.Setup(c => c.Administradores).Returns(mockSet.Object);
 
             // Act
             var result = _repository.GetAdministrador(nombre, password);
@@ -84,18 +84,18 @@ namespace GestorBarberia.Test.Capa_de_Persistencia
         {
             // Arrange
             var nombre = "admin";
-            var administradores = new List<Administrador>
+            var administradores = new List<Administradores>
         {
-            new Administrador { Nombre = nombre, Password = "password" }
+            new Administradores { Nombre = nombre, Password = "password" }
         }.AsQueryable();
 
-            var mockSet = new Mock<DbSet<Administrador>>();
-            mockSet.As<IQueryable<Administrador>>().Setup(m => m.Provider).Returns(administradores.Provider);
-            mockSet.As<IQueryable<Administrador>>().Setup(m => m.Expression).Returns(administradores.Expression);
-            mockSet.As<IQueryable<Administrador>>().Setup(m => m.ElementType).Returns(administradores.ElementType);
-            mockSet.As<IQueryable<Administrador>>().Setup(m => m.GetEnumerator()).Returns(administradores.GetEnumerator());
+            var mockSet = new Mock<DbSet<Administradores>>();
+            mockSet.As<IQueryable<Administradores>>().Setup(m => m.Provider).Returns(administradores.Provider);
+            mockSet.As<IQueryable<Administradores>>().Setup(m => m.Expression).Returns(administradores.Expression);
+            mockSet.As<IQueryable<Administradores>>().Setup(m => m.ElementType).Returns(administradores.ElementType);
+            mockSet.As<IQueryable<Administradores>>().Setup(m => m.GetEnumerator()).Returns(administradores.GetEnumerator());
 
-            _mockDbContext.Setup(c => c.administradores).Returns(mockSet.Object);
+            _mockDbContext.Setup(c => c.Administradores).Returns(mockSet.Object);
 
             // Act
             var result = _repository.GetAdministradorName(nombre);
@@ -110,15 +110,15 @@ namespace GestorBarberia.Test.Capa_de_Persistencia
         {
             // Arrange
             var nombre = "nonexistent";
-            var administradores = new List<Administrador>().AsQueryable();
+            var administradores = new List<Administradores>().AsQueryable();
 
-            var mockSet = new Mock<DbSet<Administrador>>();
-            mockSet.As<IQueryable<Administrador>>().Setup(m => m.Provider).Returns(administradores.Provider);
-            mockSet.As<IQueryable<Administrador>>().Setup(m => m.Expression).Returns(administradores.Expression);
-            mockSet.As<IQueryable<Administrador>>().Setup(m => m.ElementType).Returns(administradores.ElementType);
-            mockSet.As<IQueryable<Administrador>>().Setup(m => m.GetEnumerator()).Returns(administradores.GetEnumerator());
+            var mockSet = new Mock<DbSet<Administradores>>();
+            mockSet.As<IQueryable<Administradores>>().Setup(m => m.Provider).Returns(administradores.Provider);
+            mockSet.As<IQueryable<Administradores>>().Setup(m => m.Expression).Returns(administradores.Expression);
+            mockSet.As<IQueryable<Administradores>>().Setup(m => m.ElementType).Returns(administradores.ElementType);
+            mockSet.As<IQueryable<Administradores>>().Setup(m => m.GetEnumerator()).Returns(administradores.GetEnumerator());
 
-            _mockDbContext.Setup(c => c.administradores).Returns(mockSet.Object);
+            _mockDbContext.Setup(c => c.Administradores).Returns(mockSet.Object);
 
             // Act
             var result = _repository.GetAdministradorName(nombre);

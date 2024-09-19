@@ -27,6 +27,7 @@ namespace GestorBarberia.Api
             builder.Services.AddDependenciesEstilosdecorte();
             builder.Services.AddDependenciesAdministrador();
             builder.Services.AddDependenciesEmail();
+            builder.Services.AddDependenciesComentario();
 
             //DataBase
             builder.Services.AddDbContext<DbContextBarberia>(options => options.UseMySql(builder.Configuration.GetConnectionString("DbContextBarberia"), new MySqlServerVersion(new Version(8, 0, 23))));
@@ -67,7 +68,6 @@ namespace GestorBarberia.Api
 
                 }; 
             });
-
 
 
             var app = builder.Build();

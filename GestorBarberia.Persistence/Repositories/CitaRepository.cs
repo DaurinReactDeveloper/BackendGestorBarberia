@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace GestorBarberia.Persistence.Repositories
 {
-    public class CitaRepository : BaseRepository<Cita>, ICitaRepository
+    public class CitaRepository : BaseRepository<Citas>, ICitaRepository
     {
 
         private readonly DbContextBarberia dbContextBarberia;
@@ -24,6 +24,35 @@ namespace GestorBarberia.Persistence.Repositories
         {
             this.dbContextBarberia = dbContextBarberia; 
             this.logger = logger;
+        }
+
+        public CitaModel GetCitaById(int citaId)
+        {
+
+            try
+            {
+
+                var citaModel = (from c in this.dbContextBarberia.Citas
+                                 where c.CitaId.Equals(citaId)
+                                 select new CitaModel()
+                                 {
+                                     CitaId = c.CitaId,
+                                     BarberoId = c.BarberoId,
+                                     EstiloId = c.EstiloId,
+                                     ClienteId = c.ClienteId,
+
+                                 }).FirstOrDefault();
+
+                return citaModel;
+
+            }
+            catch (Exception ex)
+            {
+                this.logger.LogError($"Ha ocurrido un error obteniendo la citas: {ex.ToString()}.");
+                throw new CitaExceptions("Ha ocurrido un error obteniendo la Cita");
+
+            }
+
         }
 
         //Metodo para el cliente
@@ -44,6 +73,7 @@ namespace GestorBarberia.Persistence.Repositories
                                     CitaId = c.CitaId,
                                     Fecha = c.Fecha,
                                     Hora = c.Hora,
+                                    ClienteId = c.ClienteId,
                                     BarberoId = c.BarberoId,
                                     Estado = c.Estado,
                                     Barbero = b,
@@ -56,7 +86,7 @@ namespace GestorBarberia.Persistence.Repositories
             }
             catch (Exception ex)
             {
-                this.logger.LogError($"Ha ocurrido un error listando las citas: {ex.ToString()}");
+                this.logger.LogError($"Ha ocurrido un error listando las citas: {ex.ToString()}.");
                 throw new CitaExceptions("Ha ocurrido un error listando las citas");
             }
         }
@@ -87,28 +117,28 @@ namespace GestorBarberia.Persistence.Repositories
             }
             catch (Exception ex)
             {
-                this.logger.LogError($"Ha ocurrido un error listando las citas: {ex.ToString()}");
-                throw new CitaExceptions("Ha ocurrido un error listando las citas");
+                this.logger.LogError($"Ha ocurrido un error listando las citas: {ex.ToString()}.");
+                throw new CitaExceptions("Ha ocurrido un error listando las citas.");
             }
         }
 
-        public override void Add(Cita entity)
+        public override void Add(Citas entity)
         {
             base.Add(entity);
             base.SaveChanged();
         }
 
-        public override void Update(Cita entity)
+        public override void Update(Citas entity)
         {
 
             try
             {
-                Cita citaUpdate = this.GetById(entity.CitaId);
+                Citas citaUpdate = this.GetById(entity.CitaId);
 
                 if (citaUpdate is null)
                 {
 
-                    throw new CitaExceptions("Ha ocurrido un error obteniendo el Id de la Cita");
+                    throw new CitaExceptions("Ha ocurrido un error obteniendo el Id de la Cita.");
 
                 }
 
@@ -126,20 +156,20 @@ namespace GestorBarberia.Persistence.Repositories
             }
             catch (Exception ex)
             {
-                this.logger.LogError($"Ha ocurrido un error actuaalizando las citas: {ex.ToString()}");
+                this.logger.LogError($"Ha ocurrido un error actuaalizando las citas: {ex.ToString()}.");
             }
         }
 
         //Actualizar el estado
-        public void UpdateEstado(Cita citaUpdate)
+        public void UpdateEstado(Citas citaUpdate)
         {
             try
             {
-                Cita citaUpdateEstado = this.GetById(citaUpdate.CitaId);
+                Citas citaUpdateEstado = this.GetById(citaUpdate.CitaId);
 
                 if (citaUpdateEstado is null)
                 {
-                    throw new CitaExceptions("Ha ocurrido un error obteniendo el Id de la Cita");
+                    throw new CitaExceptions("Ha ocurrido un error obteniendo el Id de la Cita.");
                 }
 
                 citaUpdateEstado.CitaId = citaUpdate.CitaId;
@@ -151,22 +181,22 @@ namespace GestorBarberia.Persistence.Repositories
             }
             catch (Exception ex)
             {
-                this.logger.LogError($"Ha ocurrido un error actuaalizando las citas: {ex.ToString()}");
+                this.logger.LogError($"Ha ocurrido un error actualizando las citas: {ex.ToString()}.");
             }
         }
 
-        public override void Remove(Cita entity)
+        public override void Remove(Citas entity)
         {
 
             try
             {   
                 
-                Cita citaRemove = this.GetById(entity.CitaId);
+                Citas citaRemove = this.GetById(entity.CitaId);
 
                 if (citaRemove is null)
                 {
 
-                    throw new CitaExceptions("Ha ocurrido un error obteniendo el Id de la Cita");
+                    throw new CitaExceptions("Ha ocurrido un error obteniendo el Id de la Cita.");
 
                 }
 
@@ -174,10 +204,9 @@ namespace GestorBarberia.Persistence.Repositories
                 base.SaveChanged();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw new CitaExceptions("Ha ocurrido un error removiendo la Cita");
+                this.logger.LogError($"Ha ocurrido un error Removiendo la cita: {ex.ToString()}.");
             }
 
 

@@ -44,7 +44,6 @@ namespace GestorBarberia.Api.Controllers
         }
 
         // GET: api/<BarberoController>
-        //[Authorize(Roles = "cliente")]
         [HttpGet("GetBarberos")]
         public IActionResult GetBarberos()
         {
@@ -61,7 +60,6 @@ namespace GestorBarberia.Api.Controllers
         }
 
         // GET api/<BarberoController>/5
-        [Authorize(Roles = "cliente")]
         [HttpGet("BarberoById/{id}")]
         public IActionResult BarberoGetbyid(int id)
         {
@@ -80,7 +78,7 @@ namespace GestorBarberia.Api.Controllers
         }
 
         // POST api/<BarberoController>
-        //[Authorize(Roles = "admin")]
+        [Authorize(Roles = "admin")]
         [HttpPost("Save")]
         public IActionResult Post([FromBody] BarberoAddDto modelDto)
         {

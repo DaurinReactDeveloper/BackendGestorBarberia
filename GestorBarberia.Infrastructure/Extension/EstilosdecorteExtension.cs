@@ -10,7 +10,7 @@ namespace GestorBarberia.Infrastructure.Extension
 {
     public static class EstilosdecorteExtension
     {
-        public static EstilosdecorteModel ConvertEstilosToModel(this Estilosdecorte EstilosEntity)
+        public static EstilosdecorteModel ConvertEstilosToModel(this Estilosdecortes EstilosEntity)
         {
 
             var estilosModel = new EstilosdecorteModel()

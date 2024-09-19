@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 
 namespace GestorBarberia.Persistence.Interface
 {
-    public interface ICitaRepository : IBaseRepository<Cita>
+    public interface ICitaRepository : IBaseRepository<Citas>
     {
+        CitaModel GetCitaById(int citaId);
         List<CitaModel> GetCitaByBarberoId(int barberoId);
         List<CitaModel> GetCitaByClienteId(int clienteId);
-        void UpdateEstado(Cita citaUpdate); 
+        void UpdateEstado(Citas citaUpdate); 
     }
 }
